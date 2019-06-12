@@ -9,9 +9,9 @@ use yii\base\Model;
  * Class Centrifugo
  * @package yii2\centrifugo
  * @property string $host
- * @property string $secret write-only
- * @property string $api_key write-only
- * @property CentrifugoClient $client read-only
+ * @property string $_secret write-only
+ * @property string $_api_key write-only
+ * @property CentrifugoClient $_client read-only
  * @mixin CentrifugoClient
  */
 class Client extends Model
@@ -66,5 +66,6 @@ class Client extends Model
     {
         $this->_client = new CentrifugoClient($this->host);
         $this->_client->setSecret($this->_secret);
+        $this->_client->setApiKey($this->_api_key);
     }
 }
