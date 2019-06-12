@@ -26,6 +26,11 @@ Add into your config file as following
 ```
 
 ## Usage
+publish message
 ```php
 Yii::$app->centrifugo->publish('test', ['message' => 'hello world']);
+```
+generate jwt token
+```php
+Yii::$app->centrifugo->generateConnectionToken('5', 0, ['user_id' => 5]);
 ```
