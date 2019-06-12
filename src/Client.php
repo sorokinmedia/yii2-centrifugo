@@ -1,4 +1,5 @@
 <?php
+
 namespace sorokinmedia\centrifugo;
 
 use phpcent\Client as CentrifugoClient;
