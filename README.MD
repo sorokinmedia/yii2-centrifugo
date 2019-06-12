@@ -19,7 +19,7 @@ Add into your config file as following
 		'class'  => \sorokinmedia\centrifugo\Client::class,
 		'host'   => 'http://localhost:8000/api',
 		'secret' => 'very-long-secret-key',
-		'api_ket' => 'very-long-api-ket'
+		'apikey' => 'very-long-api-ket'
  	],
 	...
 ]

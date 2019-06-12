@@ -10,7 +10,7 @@ use yii\base\Model;
  * @package yii2\centrifugo
  * @property string $host
  * @property string $_secret write-only
- * @property string $_api_key write-only
+ * @property string $_apikey write-only
  * @property CentrifugoClient $_client read-only
  * @mixin CentrifugoClient
  */
@@ -18,7 +18,7 @@ class Client extends Model
 {
     public $host;
     protected $_secret;
-    protected $_api_key;
+    protected $_apikey;
     protected $_client;
 
     /**
@@ -32,9 +32,9 @@ class Client extends Model
     /**
      * @param $value
      */
-    public function setApiKey(string $value): void
+    public function setApikey(string $value): void
     {
-        $this->_api_key = $value;
+        $this->_apikey = $value;
     }
 
     /**
@@ -62,10 +62,13 @@ class Client extends Model
         return $this->_client;
     }
 
+    /**
+     * initialize client
+     */
     public function initClient(): void
     {
         $this->_client = new CentrifugoClient($this->host);
         $this->_client->setSecret($this->_secret);
-        $this->_client->setApiKey($this->_api_key);
+        $this->_client->setApikey($this->_apikey);
     }
 }
